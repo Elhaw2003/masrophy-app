@@ -1,19 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:masrophy_app/core/routing/app_routes.dart';
+import 'package:masrophy_app/core/services/google_service.dart';
 import 'package:masrophy_app/features/home/presentation/view/home_screen.dart';
+import 'package:masrophy_app/features/login/presentation/cubit/cubit/login_with_google_cubit.dart';
 import 'package:masrophy_app/features/login/presentation/view/login_screen.dart';
 
 class RouterGeneratedConfig {
+  static final GoogleAuthService _googleAuthService = GoogleAuthService();
+
   static GoRouter routerGeneratedConfig() {
     return GoRouter(
-      initialLocation: AppRoutes.login,
+      initialLocation: _googleAuthService.isSignedIn
+          ? AppRoutes.home
+          : AppRoutes.login,
       errorBuilder: (context, state) => _errorPageBuilder(context),
       routes: [
         GoRoute(
           path: AppRoutes.login,
           name: AppRoutes.login,
-          builder: (context, state) => const LoginScreen(),
+          builder: (context, state) => BlocProvider(
+            create: (context) => LoginWithGoogleCubit(),
+            child: const LoginScreen(),
+          ),
         ),
         GoRoute(
           path: AppRoutes.home,
