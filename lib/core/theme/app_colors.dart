@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AppColors {
   AppColors._();
 
+  static const Color black = Color(0xff000000);
   // ===========================
   // Brand Colors
   // ===========================
@@ -18,7 +19,7 @@ class AppColors {
   // Light Theme
   // ===========================
 
-  static const Color backgroundLight = Color(0xFFF5F7FA);
+  static const Color backgroundLight = Color(0xFFF8F9FA);
   static const Color surfaceLight = Colors.white;
   static const Color cardLight = Color(0xFFFFFFFF);
 
