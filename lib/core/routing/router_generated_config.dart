@@ -28,7 +28,9 @@ class RouterGeneratedConfig {
         GoRoute(
           path: AppRoutes.home,
           name: AppRoutes.home,
-          builder: (context, state) => const HomeScreen(),
+          builder: (context, state) {
+            return HomeScreen(user: _googleAuthService.currentUser!);
+          },
         ),
       ],
     );

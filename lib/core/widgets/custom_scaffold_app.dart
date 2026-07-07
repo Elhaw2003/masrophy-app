@@ -24,9 +24,9 @@ class CustomScaffoldApp extends StatelessWidget {
                     AppColors.backgroundDark,
                   ]
                 : [
-                    const Color(0xFFE8F5E9),
                     AppColors.backgroundLight,
-                    const Color.fromARGB(255, 154, 155, 155),
+                    AppColors.backgroundLight,
+                    AppColors.backgroundLight,
                   ],
           ),
         ),
