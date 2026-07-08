@@ -25,7 +25,7 @@ class GoogleAuthService {
       final GoogleSignInAccount account = await GoogleSignIn.instance
           .authenticate();
 
-      final GoogleSignInAuthentication auth = await account.authentication;
+      final GoogleSignInAuthentication auth = account.authentication;
 
       final credential = GoogleAuthProvider.credential(idToken: auth.idToken);
 
