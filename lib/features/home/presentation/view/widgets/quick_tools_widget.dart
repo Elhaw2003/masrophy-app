@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:masrophy_app/core/extension/build_context_extension.dart';
 import 'package:masrophy_app/core/extension/widget_extension.dart';
+import 'package:masrophy_app/core/routing/app_routes.dart';
 import 'package:masrophy_app/core/theme/app_colors.dart';
 import 'package:masrophy_app/core/theme/size/app_icon_size.dart';
 import 'package:masrophy_app/core/theme/size/app_radius.dart';
@@ -17,21 +19,25 @@ class QuickTools extends StatelessWidget {
         'label': "الأهداف",
         'icon': Icons.track_changes_rounded,
         'color': AppColors.purple,
+        "route": AppRoutes.goals,
       },
       {
         'label': "الديون",
         'icon': Icons.account_balance_wallet_rounded,
         'color': AppColors.warning,
+        "route": AppRoutes.debts,
       },
       {
         'label': "الدخل",
         'icon': Icons.trending_up_rounded,
         'color': AppColors.income,
+        "route": AppRoutes.goals,
       },
       {
         'label': "المصاريف",
         'icon': Icons.shopping_bag_rounded,
         'color': AppColors.expense,
+        "route": AppRoutes.goals,
       },
     ];
 
@@ -70,7 +76,9 @@ class QuickTools extends StatelessWidget {
                 ],
               ),
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  GoRouter.of(context).pushNamed(tool["route"] as String);
+                },
                 borderRadius: BorderRadius.circular(AppRadius.lg),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
