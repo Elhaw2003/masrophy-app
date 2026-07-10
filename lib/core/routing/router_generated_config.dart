@@ -2,23 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:masrophy_app/core/routing/app_routes.dart';
-import 'package:masrophy_app/core/services/google_service.dart';
 import 'package:masrophy_app/features/debts/presentation/view/debts_screen.dart';
+import 'package:masrophy_app/features/expenses/presentation/view/expenses_screen.dart';
 import 'package:masrophy_app/features/goals/presenation/view/goals_screen.dart';
 import 'package:masrophy_app/features/home/presentation/view/home_screen.dart';
+import 'package:masrophy_app/features/home_app.dart';
 import 'package:masrophy_app/features/income/presentation/view/widgets/income_screen.dart';
 import 'package:masrophy_app/features/login/presentation/cubit/cubit/login_with_google_cubit.dart';
 import 'package:masrophy_app/features/login/presentation/view/login_screen.dart';
 
 class RouterGeneratedConfig {
-  static final GoogleAuthService _googleAuthService = GoogleAuthService();
-
   static GoRouter routerGeneratedConfig() {
     return GoRouter(
       // initialLocation: _googleAuthService.isSignedIn
       //     ? AppRoutes.home
       //     : AppRoutes.login,
-      initialLocation: AppRoutes.home,
+      initialLocation: AppRoutes.homeApp,
       errorBuilder: (context, state) => _errorPageBuilder(context),
       routes: [
         GoRoute(
@@ -33,7 +32,7 @@ class RouterGeneratedConfig {
           path: AppRoutes.home,
           name: AppRoutes.home,
           builder: (context, state) {
-            return HomeScreen(user: _googleAuthService.currentUser!);
+            return HomeScreen();
           },
         ),
         GoRoute(
@@ -55,6 +54,20 @@ class RouterGeneratedConfig {
           name: AppRoutes.income,
           builder: (context, state) {
             return IncomeScreen();
+          },
+        ),
+        GoRoute(
+          path: AppRoutes.homeApp,
+          name: AppRoutes.homeApp,
+          builder: (context, state) {
+            return HomeApp();
+          },
+        ),
+        GoRoute(
+          path: AppRoutes.expenses,
+          name: AppRoutes.expenses,
+          builder: (context, state) {
+            return ExpensesScreen();
           },
         ),
       ],
