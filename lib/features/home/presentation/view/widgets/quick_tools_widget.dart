@@ -31,7 +31,7 @@ class QuickTools extends StatelessWidget {
         'label': "الدخل",
         'icon': Icons.trending_up_rounded,
         'color': AppColors.income,
-        "route": AppRoutes.goals,
+        "route": AppRoutes.income,
       },
       {
         'label': "المصاريف",

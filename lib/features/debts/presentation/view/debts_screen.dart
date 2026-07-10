@@ -65,8 +65,6 @@ class _DebtsScreenState extends State<DebtsScreen> {
   ];
   @override
   Widget build(BuildContext context) {
-    final iconColor = context.colorScheme.onSurface;
-
     // Filter debts based on selected tab
     final filteredDebts = _allDebts.where((debt) {
       if (_selectedTabIndex == 1) {

@@ -6,6 +6,7 @@ import 'package:masrophy_app/core/services/google_service.dart';
 import 'package:masrophy_app/features/debts/presentation/view/debts_screen.dart';
 import 'package:masrophy_app/features/goals/presenation/view/goals_screen.dart';
 import 'package:masrophy_app/features/home/presentation/view/home_screen.dart';
+import 'package:masrophy_app/features/income/presentation/view/widgets/income_screen.dart';
 import 'package:masrophy_app/features/login/presentation/cubit/cubit/login_with_google_cubit.dart';
 import 'package:masrophy_app/features/login/presentation/view/login_screen.dart';
 
@@ -47,6 +48,13 @@ class RouterGeneratedConfig {
           name: AppRoutes.goals,
           builder: (context, state) {
             return GoalsScreen();
+          },
+        ),
+        GoRoute(
+          path: AppRoutes.income,
+          name: AppRoutes.income,
+          builder: (context, state) {
+            return IncomeScreen();
           },
         ),
       ],
