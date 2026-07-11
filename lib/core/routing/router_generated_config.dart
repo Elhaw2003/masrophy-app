@@ -10,6 +10,7 @@ import 'package:masrophy_app/features/home_app.dart';
 import 'package:masrophy_app/features/income/presentation/view/widgets/income_screen.dart';
 import 'package:masrophy_app/features/login/presentation/cubit/cubit/login_with_google_cubit.dart';
 import 'package:masrophy_app/features/login/presentation/view/login_screen.dart';
+import 'package:masrophy_app/features/reports/presentation/view/reports_screen.dart';
 
 class RouterGeneratedConfig {
   static GoRouter routerGeneratedConfig() {
@@ -68,6 +69,13 @@ class RouterGeneratedConfig {
           name: AppRoutes.expenses,
           builder: (context, state) {
             return ExpensesScreen();
+          },
+        ),
+        GoRoute(
+          path: AppRoutes.reports,
+          name: AppRoutes.reports,
+          builder: (context, state) {
+            return ReportsScreen();
           },
         ),
       ],

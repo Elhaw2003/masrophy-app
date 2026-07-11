@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:masrophy_app/core/theme/app_colors.dart';
 import 'package:masrophy_app/features/home/presentation/view/home_screen.dart';
+import 'package:masrophy_app/features/reports/presentation/view/reports_screen.dart';
 
 class HomeApp extends StatefulWidget {
   const HomeApp({super.key});
@@ -13,7 +14,7 @@ class _HomeAppState extends State<HomeApp> {
   int _currentIndex = 0;
   List<Widget> tabs = [
     HomeScreen(),
-    Container(color: Colors.amber),
+    ReportsScreen(),
     Container(color: Colors.red),
     Container(color: Colors.green),
     Container(color: Colors.black),
@@ -36,10 +37,10 @@ class _HomeAppState extends State<HomeApp> {
       ),
 
       bottomNavigationBar: BottomAppBar(
-        // shape: const CircularNotchedRectangle(),
+        shape: const CircularNotchedRectangle(),
         notchMargin: 8,
         color: Colors.white,
-        // elevation: 10,
+        elevation: 10,
         child: SizedBox(
           height: 70,
           child: Row(

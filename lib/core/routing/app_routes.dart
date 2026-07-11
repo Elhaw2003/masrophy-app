@@ -6,4 +6,5 @@ abstract class AppRoutes {
   static const String income = '/income';
   static const String homeApp = '/homeApp';
   static const String expenses = '/expenses';
+  static const String reports = '/reports';
 }
